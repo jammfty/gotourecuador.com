@@ -522,8 +522,17 @@
         /* ===== SECTIONS GENERALES ===== */
         section {
             padding: 7rem 5%;
+            width: 100%;
+        }
+
+        .vehicles-section,
+        .why-us-section,
+        .testimonials-section,
+        .destinations-section {
             max-width: 1400px;
             margin: 0 auto;
+            padding-left: 5%;
+            padding-right: 5%;
         }
 
         .section-header {
@@ -634,13 +643,29 @@
         /* ===== VEHICLES SECTION ===== */
         .vehicles-section {
             background: var(--white);
+            width: 100%;
+            padding: 7rem 5%;
+            display: block;
+        }
+
+        .vehicles-section > .section-header {
+            max-width: 750px;
+            margin: 0 auto 5rem;
         }
 
         .vehicles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
             gap: 3rem;
             margin-top: 3rem;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .vehicles-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         .vehicle-card {
@@ -650,9 +675,11 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             border: 1px solid var(--border);
-            display: flex;
+            display: flex !important;
             flex-direction: column;
             position: relative;
+            min-height: 600px;
+            width: 100%;
         }
 
         .vehicle-card.featured {
@@ -1246,14 +1273,20 @@
 
         /* ===== ANIMACIONES SCROLL ===== */
         .reveal {
-            opacity: 0;
-            transform: translateY(40px);
+            opacity: 1 !important;
+            transform: translateY(0) !important;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Asegurar que los vehículos siempre sean visibles */
+        .vehicle-card.reveal {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
     </style>
 </head>
