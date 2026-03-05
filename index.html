@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GO Tours & Transport | Ecuador - Reserva tu Vehículo</title>
+    <title>GO Tours & Transport - Transporte Turístico en Ecuador</title>
     <style>
         * {
             margin: 0;
@@ -12,370 +12,462 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             color: #333;
-            background-color: #f5f5f5;
+            line-height: 1.6;
+            background-color: #f8f9fa;
         }
 
-        /* Navegación */
+        /* ===== NAVEGACIÓN ===== */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
         nav {
-            background: linear-gradient(135deg, #1a2a3a 0%, #0d1b26 100%);
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #003d82;
+            letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: #ff6b35;
+            color: #0055a4;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
+            align-items: center;
         }
 
         nav a {
-            color: white;
+            color: #333;
             text-decoration: none;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #ff6b35;
+            color: #0055a4;
         }
 
-        /* Selector de idioma */
         .language-selector {
             display: flex;
-            gap: 0.5rem;
-            align-items: center;
+            gap: 0.3rem;
+            margin-left: 1rem;
         }
 
         .lang-btn {
             background: transparent;
-            border: 2px solid #ff6b35;
-            color: white;
+            border: 2px solid #ddd;
+            color: #333;
             padding: 0.4rem 0.8rem;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .lang-btn.active {
-            background: #ff6b35;
+            background: #0055a4;
             color: white;
+            border-color: #0055a4;
         }
 
         .lang-btn:hover {
-            background: #ff6b35;
-            color: white;
+            border-color: #0055a4;
+            color: #0055a4;
         }
 
-        /* Hero Section */
+        /* ===== HERO SECTION ===== */
         .hero {
-            background: linear-gradient(135deg, #1a2a3a 0%, #0d1b26 100%);
+            background: linear-gradient(135deg, rgba(0, 61, 130, 0.85) 0%, rgba(0, 85, 164, 0.85) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23003d82" width="1200" height="600"/><path fill="%230055a4" d="M0,300 Q300,250 600,300 T1200,300 L1200,600 L0,600 Z" opacity="0.1"/></svg>');
+            background-size: cover, cover;
+            background-position: center;
             color: white;
-            padding: 4rem 2rem;
+            padding: 6rem 5%;
             text-align: center;
-            min-height: 80vh;
+            min-height: 600px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 107, 53, 0.1);
-            border-radius: 50%;
-            bottom: -200px;
-            right: -200px;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
-
-        .location-badge {
-            display: inline-block;
-            border: 2px solid #ff6b35;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            margin-bottom: 2rem;
-            color: #ff6b35;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h1 {
+        .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
             line-height: 1.2;
         }
 
-        .highlight {
-            color: #ff6b35;
-        }
-
-        .description {
-            font-size: 1.1rem;
+        .hero-content p {
+            font-size: 1.3rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        /* Formulario de búsqueda */
-        .search-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            opacity: 0.95;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .search-form h2 {
-            color: #1a2a3a;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+        /* ===== FORMULARIO DE BÚSQUEDA ===== */
+        .search-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            max-width: 700px;
+            margin: -3rem auto 4rem;
+            position: relative;
+            z-index: 10;
         }
 
-        .form-group {
+        .search-container h2 {
+            color: #003d82;
             margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
         }
 
         .form-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
         }
 
         label {
-            display: block;
-            color: #333;
-            margin-bottom: 0.5rem;
+            color: #555;
+            margin-bottom: 0.6rem;
             font-weight: 600;
             font-size: 0.9rem;
         }
 
         input[type="date"],
         select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
+            padding: 0.9rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
+            font-family: inherit;
         }
 
         input[type="date"]:focus,
         select:focus {
             outline: none;
-            border-color: #ff6b35;
+            border-color: #0055a4;
+            box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.1);
         }
 
         .btn-search {
             width: 100%;
             padding: 1rem;
-            background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+            background: linear-gradient(135deg, #0055a4 0%, #003d82 100%);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
+            grid-column: 1 / -1;
         }
 
         .btn-search:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 85, 164, 0.3);
         }
 
-        /* Sección de vehículos */
+        /* ===== SECCIÓN DE VEHÍCULOS ===== */
         .vehicles-section {
-            padding: 4rem 2rem;
-            background-color: white;
-            max-width: 1000px;
-            margin: 2rem auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .vehicles-section h2 {
+        .section-header {
             text-align: center;
-            color: #1a2a3a;
-            margin-bottom: 2rem;
-            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-header .label {
+            color: #0055a4;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            color: #003d82;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .vehicles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
         .vehicle-card {
-            background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border: 1px solid #eee;
         }
 
         .vehicle-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            border-color: #ff6b35;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 85, 164, 0.15);
+            border-color: #0055a4;
         }
 
-        .vehicle-icon {
-            font-size: 3rem;
+        .vehicle-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #0055a4 0%, #003d82 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vehicle-image::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><circle cx="80" cy="100" r="60" fill="white" opacity="0.05"/><circle cx="320" cy="100" r="80" fill="white" opacity="0.03"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .vehicle-content {
+            padding: 2rem;
+        }
+
+        .vehicle-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
             margin-bottom: 1rem;
         }
 
-        .vehicle-card h3 {
-            color: #1a2a3a;
+        .vehicle-content h3 {
+            color: #003d82;
+            font-size: 1.4rem;
             margin-bottom: 0.5rem;
-            font-size: 1.5rem;
         }
 
         .vehicle-capacity {
-            color: #ff6b35;
-            font-size: 1.3rem;
+            background: #f0f4f8;
+            color: #0055a4;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            white-space: nowrap;
         }
 
-        .vehicle-info {
+        .vehicle-features {
             color: #666;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            margin: 1rem 0;
             line-height: 1.6;
         }
 
-        .availability-status {
+        .vehicle-feature-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .vehicle-feature-item::before {
+            content: '✓ ';
+            color: #0055a4;
+            font-weight: 700;
+        }
+
+        .availability {
             padding: 0.8rem;
-            border-radius: 8px;
+            border-radius: 6px;
             margin-bottom: 1rem;
             font-weight: 600;
+            text-align: center;
+            font-size: 0.9rem;
         }
 
         .available {
-            background-color: #d4edda;
-            color: #155724;
-            border: 2px solid #28a745;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #2e7d32;
         }
 
         .unavailable {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 2px solid #f5c6cb;
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid #c62828;
         }
 
         .btn-reserve {
             width: 100%;
-            padding: 0.8rem;
-            background: #ff6b35;
+            padding: 0.9rem;
+            background: linear-gradient(135deg, #0055a4 0%, #003d82 100%);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-size: 0.95rem;
         }
 
         .btn-reserve:hover {
-            background: #ff5722;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 85, 164, 0.3);
         }
 
         .btn-reserve:disabled {
             background: #ccc;
             cursor: not-allowed;
+            transform: none;
         }
 
-        /* Destinos */
+        /* ===== SECCIÓN DE TESTIMONIOS ===== */
+        .testimonials-section {
+            background: #f0f4f8;
+            padding: 4rem 5%;
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #0055a4;
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0055a4 0%, #003d82 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            color: #003d82;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* ===== DESTINOS ===== */
         .destinations-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
-        }
-
-        .section-title {
-            text-align: center;
-            color: #1a2a3a;
-            margin-bottom: 3rem;
-        }
-
-        .section-title .label {
-            color: #ff6b35;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .destinations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            margin-top: 2rem;
         }
 
         .destination-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
         }
 
         .destination-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 85, 164, 0.15);
         }
 
         .destination-image {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+            height: 180px;
+            background: linear-gradient(135deg, #0055a4 0%, #003d82 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3rem;
-            color: white;
         }
 
         .destination-content {
@@ -383,7 +475,7 @@
         }
 
         .destination-content h3 {
-            color: #1a2a3a;
+            color: #003d82;
             margin-bottom: 0.5rem;
         }
 
@@ -391,39 +483,39 @@
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 1rem;
-            line-height: 1.5;
         }
 
         .destination-content a {
-            color: #ff6b35;
+            color: #0055a4;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
 
         .destination-content a:hover {
-            color: #ff5722;
+            color: #003d82;
         }
 
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
-            background: #1a2a3a;
+            background: #003d82;
             color: white;
-            padding: 3rem 2rem 1rem;
+            padding: 3rem 5%;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             margin-bottom: 2rem;
         }
 
         .footer-section h4 {
-            color: #ff6b35;
+            color: #0055a4;
             margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
         .footer-section ul {
@@ -431,7 +523,7 @@
         }
 
         .footer-section ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.7rem;
         }
 
         .footer-section a {
@@ -441,16 +533,17 @@
         }
 
         .footer-section a:hover {
-            color: #ff6b35;
+            color: #0055a4;
         }
 
         .footer-bottom {
             text-align: center;
-            border-top: 1px solid #333;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 2rem;
-            color: #999;
+            color: #aaa;
         }
 
+        /* ===== BOTÓN WHATSAPP ===== */
         .whatsapp-button {
             position: fixed;
             bottom: 2rem;
@@ -462,273 +555,308 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             cursor: pointer;
             box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s;
+            transition: all 0.3s;
             text-decoration: none;
+            z-index: 99;
         }
 
         .whatsapp-button:hover {
             transform: scale(1.1);
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            h1 {
+            .hero-content h1 {
                 font-size: 2.2rem;
             }
 
-            .nav-left {
+            nav {
+                flex-direction: column;
                 gap: 1rem;
+                padding: 1rem 2%;
             }
 
             nav ul {
                 gap: 1rem;
-                font-size: 0.9rem;
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
             }
 
-            .search-form {
+            .search-container {
+                margin: -2rem 1rem 2rem;
                 padding: 1.5rem;
             }
 
-            .language-selector {
-                gap: 0.3rem;
-            }
-
-            .lang-btn {
-                padding: 0.3rem 0.6rem;
-                font-size: 0.75rem;
+            .section-header h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navegación -->
-    <nav>
-        <div class="nav-left">
-            <div class="logo">GO<span>.</span> TOURS & TRANSPORT</div>
-            <ul>
-                <li><a href="#destinos" data-es="Destinos" data-en="Destinations">Destinos</a></li>
-                <li><a href="#vehiculos" data-es="Vehículos" data-en="Vehicles">Vehículos</a></li>
-                <li><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
-                <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
-            </ul>
-        </div>
-        <div class="language-selector">
-            <button class="lang-btn active" onclick="changeLanguage('es')" id="btn-es">ES</button>
-            <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en">EN</button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="reservar">
-        <div class="hero-content">
-            <div class="location-badge" data-es="📍 LATACUNGA, ECUADOR" data-en="📍 LATACUNGA, ECUADOR">📍 LATACUNGA, ECUADOR</div>
-            <h1>
-                <span data-es="DESCUBRE">DESCUBRE</span>
-                <span data-en="DISCOVER">DISCOVER</span>
-                <span class="highlight" data-es="ECUADOR" data-en="ECUADOR">ECUADOR</span>
-            </h1>
-            <p class="description" data-es="Tours y transporte turístico a los destinos más increíbles del país. Costa, Sierra, Amazonía y Galápagos — te llevamos a donde quieras ir." data-en="Tourist tours and transportation to the most incredible destinations in the country. Coast, Highlands, Amazon and Galápagos — we take you wherever you want to go.">Tours y transporte turístico a los destinos más increíbles del país. Costa, Sierra, Amazonía y Galápagos — te llevamos a donde quieras ir.</p>
-
-            <!-- Formulario de búsqueda -->
-            <div class="search-form">
-                <h2 data-es="Buscar Vehículo Disponible" data-en="Search Available Vehicle">Buscar Vehículo Disponible</h2>
-                <form id="searchForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fechaInicio" data-es="Fecha de Inicio" data-en="Start Date">Fecha de Inicio</label>
-                            <input type="date" id="fechaInicio" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="fechaFin" data-es="Fecha de Fin" data-en="End Date">Fecha de Fin</label>
-                            <input type="date" id="fechaFin" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="capacidad" data-es="Capacidad de Pasajeros" data-en="Passenger Capacity">Capacidad de Pasajeros</label>
-                        <select id="capacidad" required>
-                            <option value="" data-es="Selecciona capacidad..." data-en="Select capacity...">Selecciona capacidad...</option>
-                            <option value="10" data-es="10 Pasajeros" data-en="10 Passengers">10 Pasajeros</option>
-                            <option value="18" data-es="18 Pasajeros" data-en="18 Passengers">18 Pasajeros</option>
-                            <option value="" data-es="Cualquiera" data-en="Any">Cualquiera</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-search" data-es="🔍 Buscar Vehículos" data-en="🔍 Search Vehicles">🔍 Buscar Vehículos</button>
-                </form>
+    <!-- HEADER/NAVEGACIÓN -->
+    <header>
+        <nav>
+            <div style="display: flex; align-items: center; gap: 2rem; width: 100%;">
+                <div class="logo">GO<span>.</span></div>
+                <ul style="flex: 1;">
+                    <li><a href="#destinos" data-es="Destinos" data-en="Destinations">Destinos</a></li>
+                    <li><a href="#vehiculos" data-es="Vehículos" data-en="Vehicles">Vehículos</a></li>
+                    <li><a href="#testimonios" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
+                </ul>
             </div>
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="changeLanguage('es')" id="btn-es">ES</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-es="Transporte Turístico de Confianza en Ecuador" data-en="Trusted Tourist Transportation in Ecuador">Transporte Turístico de Confianza en Ecuador</h1>
+            <p data-es="Vehículos cómodos, seguros y modernos para tus aventuras por la Costa, Sierra y Amazonía" data-en="Comfortable, safe and modern vehicles for your adventures through the Coast, Highlands and Amazon">Vehículos cómodos, seguros y modernos para tus aventuras por la Costa, Sierra y Amazonía</p>
         </div>
     </section>
 
-    <!-- Sección de Vehículos Disponibles -->
-    <section class="vehicles-section" id="vehiculos">
-        <h2 data-es="🚌 Nuestros Vehículos" data-en="🚌 Our Vehicles">🚌 Nuestros Vehículos</h2>
-        <div class="vehicles-grid" id="vehiclesContainer">
-            <!-- Los vehículos se cargarán aquí con JavaScript -->
-        </div>
-    </section>
-
-    <!-- Destinos -->
-    <section class="destinations-section" id="destinos">
-        <div class="section-title">
-            <div class="label" data-es="✦ Nuestros Destinos" data-en="✦ Our Destinations">✦ Nuestros Destinos</div>
-            <h2 data-es="ECUADOR TE ESPERA" data-en="ECUADOR AWAITS YOU">ECUADOR TE ESPERA</h2>
-        </div>
-        <div class="destinations-grid">
-            <div class="destination-card">
-                <div class="destination-image">🏝️</div>
-                <div class="destination-content">
-                    <h3 data-es="Islas Galápagos" data-en="Galápagos Islands">Islas Galápagos</h3>
-                    <p data-es="Un paraíso natural único en el mundo. Tortugas gigantes, lobos marinos y aves que no temen al hombre." data-en="A unique natural paradise in the world. Giant tortoises, sea lions and fearless birds.">Un paraíso natural único en el mundo. Tortugas gigantes, lobos marinos y aves que no temen al hombre.</p>
-                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20Galápagos" data-es="Reservar ahora →" data-en="Book now →">Reservar ahora →</a>
+    <!-- FORMULARIO DE BÚSQUEDA -->
+    <div class="search-container">
+        <h2 data-es="Encuentra tu Vehículo Perfecto" data-en="Find Your Perfect Vehicle">Encuentra tu Vehículo Perfecto</h2>
+        <form id="searchForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fechaInicio" data-es="Fecha de Inicio" data-en="Start Date">Fecha de Inicio</label>
+                    <input type="date" id="fechaInicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaFin" data-es="Fecha de Fin" data-en="End Date">Fecha de Fin</label>
+                    <input type="date" id="fechaFin" required>
+                </div>
+                <div class="form-group">
+                    <label for="capacidad" data-es="Capacidad" data-en="Capacity">Capacidad</label>
+                    <select id="capacidad">
+                        <option value="">Selecciona...</option>
+                        <option value="10">10 Pasajeros</option>
+                        <option value="18">18 Pasajeros</option>
+                    </select>
                 </div>
             </div>
+            <button type="submit" class="btn-search" data-es="Buscar Vehículos" data-en="Search Vehicles">Buscar Vehículos</button>
+        </form>
+    </div>
+
+    <!-- SECCIÓN DE VEHÍCULOS -->
+    <section class="vehicles-section" id="vehiculos">
+        <div class="section-header">
+            <div class="label" data-es="NUESTROS VEHÍCULOS" data-en="OUR VEHICLES">NUESTROS VEHÍCULOS</div>
+            <h2 data-es="Flota Disponible" data-en="Available Fleet">Flota Disponible</h2>
+        </div>
+        <div class="vehicles-grid" id="vehiclesContainer"></div>
+    </section>
+
+    <!-- SECCIÓN DE TESTIMONIOS -->
+    <section class="testimonials-section" id="testimonios">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <div class="label" data-es="OPINIONES" data-en="REVIEWS">OPINIONES</div>
+                <h2 data-es="Lo que dicen nuestros clientes" data-en="What our clients say">Lo que dicen nuestros clientes</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text" data-es="Excelente servicio, vehículos impecables y conductores muy profesionales. Recomendado 100%." data-en="Excellent service, spotless vehicles and very professional drivers. 100% recommended.">Excelente servicio, vehículos impecables y conductores muy profesionales. Recomendado 100%.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4 data-es="María Rodríguez" data-en="María Rodríguez">María Rodríguez</h4>
+                            <p data-es="Turista de Colombia" data-en="Tourist from Colombia">Turista de Colombia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text" data-es="Perfecto para nuestro grupo de 18 personas. El conductor muy atento y puntual. Haremos la próxima aventura con ustedes." data-en="Perfect for our group of 18 people. The driver was very attentive and punctual. We'll book our next adventure with you.">Perfecto para nuestro grupo de 18 personas. El conductor muy atento y puntual. Haremos la próxima aventura con ustedes.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JG</div>
+                        <div class="author-info">
+                            <h4 data-es="Juan García" data-en="Juan García">Juan García</h4>
+                            <p data-es="Agencia de viajes" data-en="Travel agency">Agencia de viajes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text" data-es="La mejor relación precio-calidad en transporte turístico. Muy recomendable para explorar Ecuador cómodamente." data-en="Best value for money in tourist transportation. Highly recommended for exploring Ecuador comfortably.">La mejor relación precio-calidad en transporte turístico. Muy recomendable para explorar Ecuador cómodamente.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CP</div>
+                        <div class="author-info">
+                            <h4 data-es="Carlos Pérez" data-en="Carlos Pérez">Carlos Pérez</h4>
+                            <p data-es="Blogger de viajes" data-en="Travel blogger">Blogger de viajes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE DESTINOS -->
+    <section class="destinations-section" id="destinos">
+        <div class="section-header">
+            <div class="label" data-es="DESTINOS POPULARES" data-en="POPULAR DESTINATIONS">DESTINOS POPULARES</div>
+            <h2 data-es="Lugares que puedes visitar" data-en="Places you can visit">Lugares que puedes visitar</h2>
+        </div>
+        <div class="destinations-grid">
             <div class="destination-card">
                 <div class="destination-image">🏔️</div>
                 <div class="destination-content">
                     <h3 data-es="Cotopaxi" data-en="Cotopaxi">Cotopaxi</h3>
-                    <p data-es="El volcán activo más alto del mundo. Aventura, trekking y vistas espectaculares garantizadas." data-en="The world's highest active volcano. Adventure, trekking and spectacular views guaranteed.">El volcán activo más alto del mundo. Aventura, trekking y vistas espectaculares garantizadas.</p>
-                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20Cotopaxi" data-es="Reservar →" data-en="Book →">Reservar →</a>
+                    <p data-es="El volcán activo más alto del mundo. Aventura pura en los Andes ecuatorianos." data-en="The world's highest active volcano. Pure adventure in the Ecuadorian Andes.">El volcán activo más alto del mundo. Aventura pura en los Andes ecuatorianos.</p>
+                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20Cotopaxi" data-es="Ver más →" data-en="Learn more →">Ver más →</a>
                 </div>
             </div>
+
             <div class="destination-card">
                 <div class="destination-image">🌴</div>
                 <div class="destination-content">
                     <h3 data-es="Amazonía" data-en="Amazon">Amazonía</h3>
-                    <p data-es="La selva más biodiversa del planeta. Descubre especies únicas y comunidades indígenas ancestrales." data-en="The most biodiverse jungle on the planet. Discover unique species and ancient indigenous communities.">La selva más biodiversa del planeta. Descubre especies únicas y comunidades indígenas ancestrales.</p>
-                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20la%20Amazonía" data-es="Reservar →" data-en="Book →">Reservar →</a>
+                    <p data-es="Descubre la biodiversidad más increíble del planeta en la selva ecuatoriana." data-en="Discover the most incredible biodiversity on the planet in the Ecuadorian jungle.">Descubre la biodiversidad más increíble del planeta en la selva ecuatoriana.</p>
+                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20la%20Amazonía" data-es="Ver más →" data-en="Learn more →">Ver más →</a>
                 </div>
             </div>
-            <div class="destination-card">
-                <div class="destination-image">🏛️</div>
-                <div class="destination-content">
-                    <h3 data-es="Quito" data-en="Quito">Quito</h3>
-                    <p data-es="Capital histórica y Patrimonio UNESCO. Arquitectura colonial, gastronomía y cultura vibrante." data-en="Historic capital and UNESCO World Heritage. Colonial architecture, gastronomy and vibrant culture.">Capital histórica y Patrimonio UNESCO. Arquitectura colonial, gastronomía y cultura vibrante.</p>
-                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20Quito" data-es="Reservar →" data-en="Book →">Reservar →</a>
-                </div>
-            </div>
-            <div class="destination-card">
-                <div class="destination-image">💧</div>
-                <div class="destination-content">
-                    <h3 data-es="Baños" data-en="Baños">Baños</h3>
-                    <p data-es="Aventura, aguas termales y naturaleza. Cascadas, tirolesas y actividades emocionantes te esperan." data-en="Adventure, hot springs and nature. Waterfalls, ziplines and exciting activities await you.">Aventura, aguas termales y naturaleza. Cascadas, tirolesas y actividades emocionantes te esperan.</p>
-                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20Baños" data-es="Reservar →" data-en="Book →">Reservar →</a>
-                </div>
-            </div>
+
             <div class="destination-card">
                 <div class="destination-image">🏖️</div>
                 <div class="destination-content">
                     <h3 data-es="Costa del Pacífico" data-en="Pacific Coast">Costa del Pacífico</h3>
-                    <p data-es="Montañita, Salinas, Puerto López y más. Playas paradisíacas y gastronomía de mar incomparable." data-en="Montañita, Salinas, Puerto López and more. Paradisiacal beaches and unparalleled seafood gastronomy.">Montañita, Salinas, Puerto López y más. Playas paradisíacas y gastronomía de mar incomparable.</p>
-                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20la%20Costa" data-es="Reservar →" data-en="Book →">Reservar →</a>
+                    <p data-es="Playas paradisíacas con la mejor gastronomía del mar. Relax y diversión garantizados." data-en="Paradisiacal beaches with the best seafood. Relaxation and fun guaranteed.">Playas paradisíacas con la mejor gastronomía del mar. Relax y diversión garantizados.</p>
+                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20la%20Costa" data-es="Ver más →" data-en="Learn more →">Ver más →</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="destination-image">🏝️</div>
+                <div class="destination-content">
+                    <h3 data-es="Galápagos" data-en="Galápagos">Galápagos</h3>
+                    <p data-es="Un paraíso natural único. Tortugas gigantes, lobos marinos y fauna silvestre espectacular." data-en="A unique natural paradise. Giant tortoises, sea lions and spectacular wildlife.">Un paraíso natural único. Tortugas gigantes, lobos marinos y fauna silvestre espectacular.</p>
+                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20Galápagos" data-es="Ver más →" data-en="Learn more →">Ver más →</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="destination-image">💧</div>
+                <div class="destination-content">
+                    <h3 data-es="Baños" data-en="Baños">Baños</h3>
+                    <p data-es="Aventura extrema y aguas termales. Cascadas, tirolesas y naturaleza pura." data-en="Extreme adventure and hot springs. Waterfalls, ziplines and pure nature.">Aventura extrema y aguas termales. Cascadas, tirolesas y naturaleza pura.</p>
+                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20Baños" data-es="Ver más →" data-en="Learn more →">Ver más →</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="destination-image">🏛️</div>
+                <div class="destination-content">
+                    <h3 data-es="Quito Histórico" data-en="Historic Quito">Quito Histórico</h3>
+                    <p data-es="Capital patrimonio UNESCO. Arquitectura colonial y cultura vibrante en los Andes." data-en="UNESCO heritage capital. Colonial architecture and vibrant culture in the Andes.">Capital patrimonio UNESCO. Arquitectura colonial y cultura vibrante en los Andes.</p>
+                    <a href="https://wa.me/593983526755?text=Quiero%20información%20sobre%20Quito" data-es="Ver más →" data-en="Learn more →">Ver más →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contacto">
+    <!-- FOOTER -->
+    <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h4 data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</h4>
-                <p data-es="Tu agencia de turismo de confianza en Ecuador. Basados en Latacunga, llevamos más de 10 años ofreciendo las mejores experiencias turísticas." data-en="Your trusted tourism agency in Ecuador. Based in Latacunga, we have been offering the best tourist experiences for over 10 years.">Tu agencia de turismo de confianza en Ecuador. Basados en Latacunga, llevamos más de 10 años ofreciendo las mejores experiencias turísticas.</p>
+                <p style="color: #ccc; line-height: 1.6;">
+                    <span data-es="GO Tours & Transport es tu agencia de turismo de confianza en Ecuador. Con más de 10 años de experiencia, ofrecemos transporte seguro y cómodo a los destinos más hermosos del país." data-en="GO Tours & Transport is your trusted tourism agency in Ecuador. With over 10 years of experience, we offer safe and comfortable transportation to the most beautiful destinations in the country.">GO Tours & Transport es tu agencia de turismo de confianza en Ecuador. Con más de 10 años de experiencia, ofrecemos transporte seguro y cómodo a los destinos más hermosos del país.</span>
+                </p>
             </div>
             <div class="footer-section">
-                <h4 data-es="Destinos" data-en="Destinations">Destinos</h4>
+                <h4 data-es="Información" data-en="Information">Información</h4>
                 <ul>
-                    <li><a href="#" data-es="Galápagos" data-en="Galápagos">Galápagos</a></li>
-                    <li><a href="#" data-es="Cotopaxi" data-en="Cotopaxi">Cotopaxi</a></li>
-                    <li><a href="#" data-es="Amazonía" data-en="Amazon">Amazonía</a></li>
-                    <li><a href="#" data-es="Quito" data-en="Quito">Quito</a></li>
+                    <li><a href="https://wa.me/593983526755" data-es="WhatsApp" data-en="WhatsApp">WhatsApp</a></li>
+                    <li><a href="mailto:info@gotourecuador.com" data-es="Email" data-en="Email">Email</a></li>
+                    <li><a href="#" data-es="Teléfono" data-en="Phone">+593 98 352 6755</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
-                <ul>
-                    <li><a href="https://wa.me/593983526755">📱 +593 98 352 6755</a></li>
-                    <li><a href="mailto:info@gotourecuador.com">✉️ info@gotourecuador.com</a></li>
-                    <li>📍 Latacunga, Ecuador</li>
-                </ul>
+                <h4 data-es="Ubicación" data-en="Location">Ubicación</h4>
+                <p style="color: #ccc;">
+                    📍 Latacunga, Ecuador<br>
+                    <span data-es="Atendemos todo el país" data-en="We serve the entire country">Atendemos todo el país</span>
+                </p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p data-es="© 2025 GO Tours & Transport. Todos los derechos reservados." data-en="© 2025 GO Tours & Transport. All rights reserved." id="copyright">© 2025 GO Tours & Transport. Todos los derechos reservados.</p>
+            <p data-es="© 2025 GO Tours & Transport. Todos los derechos reservados." data-en="© 2025 GO Tours & Transport. All rights reserved.">© 2025 GO Tours & Transport. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- Botón WhatsApp flotante -->
+    <!-- BOTÓN WHATSAPP -->
     <a href="https://wa.me/593983526755?text=Hola!%20Me%20interesa%20información%20sobre%20tours%20en%20Ecuador" class="whatsapp-button" title="Contactar por WhatsApp">💬</a>
 
     <script>
-        // Datos de vehículos con traducciones
         const vehicles = [
             {
                 id: 1,
-                nameEs: "Minibus Estándar",
-                nameEn: "Standard Minibus",
+                nameEs: "Minibus de 10 Pasajeros",
+                nameEn: "10 Passenger Minibus",
                 capacity: 10,
                 icon: "🚐",
-                descriptionEs: "Vehículo cómodo y confiable para grupos pequeños. Perfecto para tours de aventura.",
-                descriptionEn: "Comfortable and reliable vehicle for small groups. Perfect for adventure tours.",
-                featuresEs: "AC, WiFi, Asientos reclinables",
-                featuresEn: "AC, WiFi, Reclining seats"
+                descriptionEs: "Vehículo cómodo ideal para grupos pequeños y medianos.",
+                descriptionEn: "Comfortable vehicle ideal for small to medium groups.",
+                featuresEs: ["Aire acondicionado", "WiFi gratuito", "Asientos reclinables", "Conductor profesional"],
+                featuresEn: ["Air conditioning", "Free WiFi", "Reclining seats", "Professional driver"]
             },
             {
                 id: 2,
-                nameEs: "Autocar Premium",
-                nameEn: "Premium Coach",
+                nameEs: "Autocar Premium de 18 Pasajeros",
+                nameEn: "Premium Coach 18 Passengers",
                 capacity: 18,
                 icon: "🚌",
-                descriptionEs: "Autobús de lujo con máxima capacidad. Ideal para grupos grandes y tours completos.",
-                descriptionEn: "Luxury bus with maximum capacity. Ideal for large groups and complete tours.",
-                featuresEs: "AC Dual, Baño, WiFi, Pantalla LCD",
-                featuresEn: "Dual AC, Bathroom, WiFi, LCD Screen"
+                descriptionEs: "Autobús de lujo con todas las comodidades para grupos grandes.",
+                descriptionEn: "Luxury coach with all amenities for large groups.",
+                featuresEs: ["Aire acondicionado dual", "Baño a bordo", "WiFi premium", "Pantalla LCD", "Audio system"],
+                featuresEn: ["Dual air conditioning", "On-board bathroom", "Premium WiFi", "LCD screen", "Audio system"]
             }
         ];
 
-        // Datos simulados de disponibilidad
         const availability = {
-            1: { "2025-03-10": true, "2025-03-11": false, "2025-03-12": true, "2025-03-13": true },
-            2: { "2025-03-10": false, "2025-03-11": true, "2025-03-12": true, "2025-03-13": false }
+            1: { "2025-03-10": true, "2025-03-11": false, "2025-03-12": true, "2025-03-13": true, "2025-03-14": true },
+            2: { "2025-03-10": false, "2025-03-11": true, "2025-03-12": true, "2025-03-13": false, "2025-03-14": true }
         };
 
         let currentLanguage = 'es';
 
-        // Función para cambiar idioma
         function changeLanguage(lang) {
             currentLanguage = lang;
-
-            // Actualizar botones
             document.getElementById('btn-es').classList.toggle('active', lang === 'es');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
-            // Actualizar todos los elementos con atributos data-es y data-en
-            document.querySelectorAll('[data-es][data-en]').forEach(element => {
-                if (element.tagName === 'OPTION' || element.tagName === 'INPUT') {
-                    element.value = lang === 'es' ? element.getAttribute('data-es') : element.getAttribute('data-en');
-                } else if (element.tagName === 'A' && element.hasAttribute('href')) {
-                    if (element.getAttribute('href').includes('wa.me')) {
-                        element.textContent = lang === 'es' ? element.getAttribute('data-es') : element.getAttribute('data-en');
-                    } else {
-                        element.textContent = lang === 'es' ? element.getAttribute('data-es') : element.getAttribute('data-en');
-                    }
+            document.querySelectorAll('[data-es][data-en]').forEach(el => {
+                const text = lang === 'es' ? el.getAttribute('data-es') : el.getAttribute('data-en');
+                if (el.tagName === 'INPUT' || el.tagName === 'OPTION') {
+                    el.placeholder = text;
                 } else {
-                    element.textContent = lang === 'es' ? element.getAttribute('data-es') : element.getAttribute('data-en');
+                    el.textContent = text;
                 }
             });
 
-            // Renderizar vehículos con el idioma actual
             renderVehicles();
-
-            // Actualizar atributos de idioma del HTML
             document.documentElement.lang = lang;
         }
 
-        // Función para verificar disponibilidad
         function checkAvailability(vehicleId, startDate, endDate) {
             const start = new Date(startDate);
             const end = new Date(endDate);
@@ -744,15 +872,12 @@
             return isAvailable;
         }
 
-        // Función para renderizar vehículos
         function renderVehicles(startDate = null, endDate = null, capacity = null) {
             const container = document.getElementById('vehiclesContainer');
             container.innerHTML = '';
 
             vehicles.forEach(vehicle => {
-                if (capacity && capacity !== '' && vehicle.capacity !== parseInt(capacity)) {
-                    return;
-                }
+                if (capacity && capacity !== '' && vehicle.capacity !== parseInt(capacity)) return;
 
                 let isAvailable = true;
                 if (startDate && endDate) {
@@ -760,42 +885,51 @@
                 }
 
                 const name = currentLanguage === 'es' ? vehicle.nameEs : vehicle.nameEn;
-                const description = currentLanguage === 'es' ? vehicle.descriptionEs : vehicle.descriptionEn;
+                const desc = currentLanguage === 'es' ? vehicle.descriptionEs : vehicle.descriptionEn;
                 const features = currentLanguage === 'es' ? vehicle.featuresEs : vehicle.featuresEn;
-                const availabilityText = currentLanguage === 'es' ? (isAvailable ? '✓ Disponible' : '✗ No disponible') : (isAvailable ? '✓ Available' : '✗ Not available');
-                const reserveText = isAvailable ? (currentLanguage === 'es' ? 'Reservar Ahora' : 'Book Now') : (currentLanguage === 'es' ? 'No disponible' : 'Not available');
+                const availText = isAvailable
+                    ? (currentLanguage === 'es' ? '✓ Disponible' : '✓ Available')
+                    : (currentLanguage === 'es' ? '✗ No disponible' : '✗ Not available');
+                const btnText = isAvailable
+                    ? (currentLanguage === 'es' ? 'Reservar Ahora' : 'Book Now')
+                    : (currentLanguage === 'es' ? 'No disponible' : 'Not available');
 
                 const card = document.createElement('div');
                 card.className = 'vehicle-card';
                 card.innerHTML = `
-                    <div class="vehicle-icon">${vehicle.icon}</div>
-                    <h3>${name}</h3>
-                    <div class="vehicle-capacity">${vehicle.capacity} ${currentLanguage === 'es' ? 'Pasajeros' : 'Passengers'}</div>
-                    <div class="vehicle-info">${features}</div>
-                    <p class="vehicle-info">${description}</p>
-                    <div class="availability-status ${isAvailable ? 'available' : 'unavailable'}">
-                        ${availabilityText}
+                    <div class="vehicle-image">${vehicle.icon}</div>
+                    <div class="vehicle-content">
+                        <div class="vehicle-header">
+                            <div>
+                                <h3>${name}</h3>
+                                <div class="vehicle-capacity">${vehicle.capacity} ${currentLanguage === 'es' ? 'pasajeros' : 'passengers'}</div>
+                            </div>
+                        </div>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 1rem;">${desc}</p>
+                        <div class="vehicle-features">
+                            ${features.map(f => `<div class="vehicle-feature-item">${f}</div>`).join('')}
+                        </div>
+                        <div class="availability ${isAvailable ? 'available' : 'unavailable'}">
+                            ${availText}
+                        </div>
+                        <button class="btn-reserve" ${!isAvailable ? 'disabled' : ''} onclick="reserveVehicle(${vehicle.id}, '${name}')">
+                            ${btnText}
+                        </button>
                     </div>
-                    <button class="btn-reserve" ${!isAvailable ? 'disabled' : ''}
-                            onclick="reserveVehicle(${vehicle.id}, '${name}')">
-                        ${reserveText}
-                    </button>
                 `;
                 container.appendChild(card);
             });
         }
 
-        // Función para reservar vehículo
         function reserveVehicle(vehicleId, vehicleName) {
             const startDate = document.getElementById('fechaInicio').value;
             const endDate = document.getElementById('fechaFin').value;
-            const message = currentLanguage === 'es'
-                ? `Hola!%20Quiero%20reservar%20el%20${vehicleName}%20desde%20${startDate}%20hasta%20${endDate}`
-                : `Hi!%20I%20want%20to%20book%20the%20${vehicleName}%20from%20${startDate}%20to%20${endDate}`;
-            window.location.href = `https://wa.me/593983526755?text=${message}`;
+            const msg = currentLanguage === 'es'
+                ? `Hola!%20Quiero%20reservar%20${vehicleName}%20desde%20${startDate}%20hasta%20${endDate}`
+                : `Hi!%20I%20want%20to%20book%20${vehicleName}%20from%20${startDate}%20to%20${endDate}`;
+            window.location.href = `https://wa.me/593983526755?text=${msg}`;
         }
 
-        // Event listener para el formulario
         document.getElementById('searchForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const startDate = document.getElementById('fechaInicio').value;
@@ -808,12 +942,10 @@
             }
         });
 
-        // Inicializar
         renderVehicles();
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('fechaInicio').min = today;
         document.getElementById('fechaFin').min = today;
-
         document.getElementById('fechaInicio').addEventListener('change', function() {
             document.getElementById('fechaFin').min = this.value;
         });
