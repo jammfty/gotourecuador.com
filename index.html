@@ -3,1762 +3,713 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GO Tours & Transport - Transporte turístico premium en Ecuador con vehículos de última generación">
-    <title>GO Tours & Transport | Transporte Turístico Premium Ecuador</title>
+    <title>Aventuras Ecuador | GO Tours & AVENTURA - Tu Compañía Local</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0f2847;
-            --primary-light: #1a3a5c;
-            --primary-dark: #081829;
-            --accent: #00d4aa;
-            --accent-dark: #00b894;
-            --accent-light: #1ae6c1;
-            --gold: #d4af37;
-            --gold-dark: #b8941f;
-            --text: #2d3748;
-            --text-light: #718096;
-            --text-lighter: #a0aec0;
-            --bg: #f8fafc;
-            --bg-light: #f0f4f8;
-            --white: #ffffff;
-            --border: #e2e8f0;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
-            --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.15);
-            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
+            --forest-dark: #1B4D3E;
+            --forest: #2D5A3D;
+            --jungle: #4A7C59;
+            --nature-light: #8FBC8F;
+            --earth: #D4A574;
+            --cream: #F5F5DC;
+            --warm-white: #FAFAF8;
+            --text-dark: #2C3E2C;
+            --accent-gold: #C9A227;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
+            font-family: var(--font-body);
+            background-color: var(--warm-white);
+            color: var(--text-dark);
             line-height: 1.6;
-            background-color: var(--white);
-            overflow-x: hidden;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        /* ===== HEADER PREMIUM ===== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            transition: var(--transition);
-            background: transparent;
-            padding: 1.5rem 0;
-        }
-
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(30px);
-            box-shadow: var(--shadow);
-            padding: 1rem 0;
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-        }
-
-        header.scrolled .logo {
-            color: var(--primary);
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-center {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .nav-center a {
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        header.scrolled .nav-center a {
-            color: var(--text);
-        }
-
-        .nav-center a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: var(--transition);
-        }
-
-        .nav-center a:hover::after {
-            width: 100%;
-        }
-
-        .nav-right {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .language-selector {
-            display: flex;
-            gap: 0.5rem;
-            padding-left: 1.5rem;
-            border-left: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        header.scrolled .language-selector {
-            border-left-color: rgba(0, 0, 0, 0.1);
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 1.5px solid rgba(255, 255, 255, 0.4);
-            color: rgba(255, 255, 255, 0.9);
-            padding: 0.5rem 0.9rem;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 600;
-            font-size: 0.8rem;
-            letter-spacing: 1.2px;
-        }
-
-        header.scrolled .lang-btn {
-            border-color: rgba(0, 0, 0, 0.1);
-            color: var(--text);
-        }
-
-        .lang-btn.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--white);
-        }
-
-        .lang-btn:hover:not(.active) {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* ===== HERO ÉPICO ===== */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            margin-top: -80px;
-            padding-top: 80px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(15, 40, 71, 0.95) 0%, rgba(26, 58, 92, 0.9) 50%, rgba(15, 40, 71, 0.98) 100%);
-            z-index: 1;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
+        /* Hero */
+        .hero-local {
+            background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest) 50%, var(--jungle) 100%);
+            color: white;
+            padding: 4rem 1.5rem 6rem;
             text-align: center;
-            color: var(--white);
-            max-width: 1000px;
-            padding: 0 5%;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(20px);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 2.5rem;
-            border: 1.5px solid rgba(255, 255, 255, 0.2);
-            animation: fadeInUp 1.2s ease-out 0.1s both;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-badge::before {
-            content: '⭐';
-            font-size: 1.1rem;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-            animation: fadeInUp 1.2s ease-out 0.2s both;
-        }
-
-        .hero h1 span {
-            color: var(--accent);
-            font-style: italic;
-            font-weight: 500;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto 3.5rem;
-            font-weight: 300;
-            line-height: 1.8;
-            animation: fadeInUp 1.2s ease-out 0.3s both;
-            letter-spacing: 0.3px;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            animation: fadeInUp 1.2s ease-out 0.4s both;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            padding: 1.2rem 3rem;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            color: var(--white);
-            border: none;
-            border-radius: var(--radius-lg);
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 15px 40px rgba(0, 212, 170, 0.3);
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 50px rgba(0, 212, 170, 0.4);
-        }
-
-        .btn-secondary {
-            padding: 1.2rem 3rem;
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-            border-radius: var(--radius-lg);
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-        }
-
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 5rem;
-            margin-top: 4rem;
-            animation: fadeInUp 1.2s ease-out 0.5s both;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.85;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            animation: bounce 2.5s ease-in-out infinite;
-            cursor: pointer;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-15px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-8px);
-            }
-        }
-
-        .scroll-indicator svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--white);
-            opacity: 0.7;
-            stroke-width: 2;
-        }
-
-        /* ===== SEARCH SECTION ===== */
-        .search-section {
-            position: relative;
-            z-index: 10;
-            margin-top: -120px;
-            padding: 0 5%;
-        }
-
-        .search-container {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-xl);
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3.5rem;
             position: relative;
             overflow: hidden;
         }
 
-        .search-container::before {
+        .hero-local::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 50%, var(--accent) 100%);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.4;
         }
 
-        .search-header {
-            text-align: center;
-            margin-bottom: 3rem;
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        
+        .logo-badge {
+            width: 120px; height: 120px; background: white; border-radius: 50%;
+            margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3); padding: 15px;
         }
-
-        .search-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .search-header p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            letter-spacing: 0.3px;
-        }
-
-        .search-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr auto;
-            gap: 1.5rem;
-            align-items: end;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-        }
-
-        .form-group label {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
+        
+        .logo-badge img { width: 100%; height: 100%; object-fit: contain; }
+        
+        .hero-tag {
+            display: inline-block; background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px); padding: 0.5rem 1.5rem;
+            border-radius: 50px; font-size: 0.9rem; font-weight: 500;
+            margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2);
             letter-spacing: 1px;
         }
 
-        .input-wrapper {
-            position: relative;
+        h1 { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subtitle { font-size: 1.25rem; opacity: 0.95; font-weight: 300; max-width: 600px; margin: 0 auto; }
+        .highlight { color: var(--earth); font-weight: 600; }
+
+        /* Companionship */
+        .companionship-section {
+            background: var(--cream); padding: 3rem 1.5rem; margin-top: -3rem;
+            position: relative; z-index: 3; border-radius: 30px 30px 0 0;
         }
 
-        input[type="date"],
-        select {
-            width: 100%;
-            padding: 1.1rem 1rem;
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            font-size: 1rem;
-            font-family: inherit;
-            background: var(--white);
-            transition: var(--transition);
-            color: var(--text);
+        .trust-badges {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+            max-width: 600px; margin: 0 auto 3rem;
+        }
+        
+        @media (min-width: 640px) { .trust-badges { grid-template-columns: repeat(4, 1fr); } }
+
+        .trust-item {
+            background: white; padding: 1.5rem 1rem; border-radius: 15px;
+            text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 2px solid transparent; transition: all 0.3s ease;
+        }
+        
+        .trust-item:hover { border-color: var(--jungle); transform: translateY(-3px); }
+        .trust-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+        .trust-item h4 { color: var(--forest-dark); font-size: 0.85rem; font-weight: 600; margin: 0; }
+
+        .diff-message {
+            background: white; border-radius: 20px; padding: 2.5rem;
+            max-width: 800px; margin: 0 auto; text-align: center;
+            box-shadow: 0 10px 40px rgba(27, 77, 62, 0.1);
+            border-left: 5px solid var(--earth);
         }
 
-        input[type="date"]:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(0, 212, 170, 0.1);
-            background: rgba(0, 212, 170, 0.02);
+        .diff-message h2 { font-family: var(--font-display); color: var(--forest-dark); font-size: 1.8rem; margin-bottom: 1rem; }
+        .diff-message p { color: var(--text-dark); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .signature { font-style: italic; color: var(--jungle); font-weight: 500; font-size: 1.1rem; }
+
+        /* Routes Selection */
+        .routes-section { padding: 5rem 1.5rem; background: var(--warm-white); }
+        
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-family: var(--font-display); color: var(--forest-dark); font-size: 2.2rem; margin-bottom: 1rem; }
+        .section-header p { color: var(--jungle); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Tabs */
+        .route-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        
+        .tab-btn {
+            padding: 1rem 2rem; border: 2px solid var(--forest); background: transparent;
+            color: var(--forest); border-radius: 50px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; font-family: var(--font-body); font-size: 1rem;
+        }
+        
+        .tab-btn.active { background: var(--forest); color: white; }
+        .tab-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(27, 77, 62, 0.2); }
+
+        .route-content { display: none; animation: fadeIn 0.5s; }
+        .route-content.active { display: block; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Route Cards */
+        .route-intro {
+            background: white; border-radius: 20px; padding: 2rem; margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;
+        }
+        
+        .route-intro h3 { font-family: var(--font-display); color: var(--forest-dark); font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .route-intro p { color: var(--text-dark); max-width: 700px; margin: 0 auto; }
+
+        .days-grid { display: grid; gap: 2rem; max-width: 1000px; margin: 0 auto; }
+
+        .day-card {
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 15px 40px rgba(27, 77, 62, 0.1);
+            display: grid; grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) { .day-card { grid-template-columns: 300px 1fr; } }
+
+        /* Image Placeholder - AQUÍ VAN TUS FOTOS */
+        .day-image {
+            background: linear-gradient(135deg, var(--nature-light), var(--jungle));
+            min-height: 250px; position: relative; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+        
+        .day-image img {
+            width: 100%; height: 100%; object-fit: cover;
+            position: absolute; top: 0; left: 0;
+        }
+        
+        .image-placeholder {
+            color: white; font-weight: 600; text-align: center; padding: 2rem;
+            z-index: 2; background: rgba(0,0,0,0.3); border-radius: 10px;
+            backdrop-filter: blur(5px);
         }
 
-        .btn-search {
-            padding: 1.1rem 2.8rem;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            color: var(--white);
-            border: none;
-            border-radius: var(--radius);
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            height: fit-content;
-            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.25);
-            letter-spacing: 0.5px;
+        .day-content { padding: 2rem; }
+        
+        .day-number {
+            display: inline-block; background: var(--earth); color: white;
+            padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem;
+            font-weight: 700; margin-bottom: 1rem; text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .day-content h4 { font-family: var(--font-display); color: var(--forest-dark); font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .day-location { color: var(--jungle); font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        
+        .activities-list { list-style: none; margin: 1.5rem 0; }
+        .activities-list li {
+            padding: 0.7rem 0; border-bottom: 1px solid #eee;
+            display: flex; align-items: flex-start; gap: 0.8rem;
+        }
+        
+        .activities-list li:last-child { border-bottom: none; }
+        .act-icon { font-size: 1.2rem; flex-shrink: 0; }
+        
+        .stay-box {
+            background: var(--cream); padding: 1rem; border-radius: 10px;
+            margin-top: 1rem; border-left: 3px solid var(--forest);
+        }
+        
+        .stay-box strong { color: var(--forest-dark); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Gallery Section Instructions */
+        .gallery-instructions {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white; padding: 4rem 1.5rem; margin-top: 4rem; border-radius: 30px 30px 0 0;
+        }
+        
+        .gallery-instructions h2 { font-family: var(--font-display); text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+        
+        .instructions-grid {
+            display: grid; grid-template-columns: 1fr; gap: 2rem;
+            max-width: 900px; margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) { .instructions-grid { grid-template-columns: 1fr 1fr; } }
+
+        .instruction-card {
+            background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px;
+            backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .instruction-card h3 { color: var(--earth); margin-bottom: 1rem; font-size: 1.2rem; }
+        .instruction-card ol { padding-left: 1.2rem; line-height: 2; }
+        .instruction-card li { margin-bottom: 0.5rem; }
+        .code-block {
+            background: #0d1117; padding: 1rem; border-radius: 8px;
+            font-family: monospace; font-size: 0.9rem; margin-top: 1rem;
+            color: #7ee787; overflow-x: auto;
         }
 
-        .btn-search:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 212, 170, 0.35);
+        /* Guide Section */
+        .guide-section {
+            background: linear-gradient(to bottom, var(--warm-white), var(--cream));
+            padding: 5rem 1.5rem; text-align: center;
         }
 
-        /* ===== SECTIONS GENERALES ===== */
-        section {
-            padding: 7rem 5%;
-            width: 100%;
+        .guide-container {
+            max-width: 800px; margin: 0 auto; background: white;
+            border-radius: 25px; padding: 3rem 2rem;
+            box-shadow: 0 20px 60px rgba(27, 77, 62, 0.1);
         }
 
-        .vehicles-section,
-        .why-us-section,
-        .testimonials-section,
-        .destinations-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-left: 5%;
-            padding-right: 5%;
+        .guide-avatar-wrap { position: relative; display: inline-block; margin-bottom: 1.5rem; }
+        
+        .guide-avatar {
+            width: 150px; height: 150px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--forest), var(--jungle));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 4rem; color: white; border: 5px solid var(--cream);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .status-badge {
+            position: absolute; bottom: 10px; right: 10px;
+            background: #25D366; width: 30px; height: 30px;
+            border-radius: 50%; border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: pulse-green 2s infinite;
+        }
+        
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        .section-header {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 5rem;
+        .guide-container h2 { font-family: var(--font-display); color: var(--forest-dark); font-size: 2rem; margin-bottom: 0.5rem; }
+        .guide-role { color: var(--jungle); font-weight: 600; margin-bottom: 1.5rem; }
+        
+        .guide-quote {
+            font-style: italic; font-size: 1.2rem; color: var(--text-dark);
+            line-height: 1.8; margin-bottom: 2rem; position: relative; padding: 0 1rem;
         }
 
-        .section-label {
-            display: inline-block;
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            margin-bottom: 1rem;
-            position: relative;
-        }
+        .contact-methods { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+        
+        @media (min-width: 640px) { .contact-methods { flex-direction: row; justify-content: center; } }
 
-        .section-label::before {
-            content: '◆';
-            margin-right: 0.8rem;
-            opacity: 0.7;
+        .contact-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 0.5rem; padding: 1rem 2rem; border-radius: 50px;
+            text-decoration: none; font-weight: 600; transition: all 0.3s;
         }
+        
+        .contact-btn.whatsapp { background: #25D366; color: white; }
+        .contact-btn.whatsapp:hover { background: #128C7E; transform: translateY(-2px); }
+        .contact-btn.call { background: white; color: var(--forest-dark); border: 2px solid var(--forest); }
+        .contact-btn.call:hover { background: var(--forest); color: white; }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            font-weight: 700;
+        /* Footer */
+        .footer-local {
+            background: var(--forest-dark); color: white;
+            padding: 3rem 1.5rem; text-align: center;
         }
+        
+        .footer-local p { opacity: 0.9; margin-bottom: 0.5rem; }
+        .footer-local .brand { font-family: var(--font-display); font-size: 1.5rem; color: var(--earth); margin-top: 1rem; }
 
-        .section-subtitle {
-            color: var(--text-light);
-            font-size: 1.15rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-            letter-spacing: 0.3px;
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25D366; color: white; width: 70px; height: 70px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; font-size: 2.5rem;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+            z-index: 1000; animation: float 3s ease-in-out infinite;
+            transition: all 0.3s;
         }
-
-        /* ===== WHY US SECTION ===== */
-        .why-us-section {
-            background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+        
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        
+        .whatsapp-tooltip {
+            position: absolute; right: 80px; background: white; color: var(--text-dark);
+            padding: 0.8rem 1.2rem; border-radius: 12px; font-size: 0.9rem;
+            font-weight: 600; white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            opacity: 0; visibility: hidden; transition: all 0.3s; min-width: 200px; text-align: center;
         }
-
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+        
+        .whatsapp-tooltip::after {
+            content: ''; position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+            border-width: 8px 0 8px 8px; border-style: solid; border-color: transparent transparent transparent white;
         }
-
-        .why-us-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .why-us-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--gold));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
-
-        .why-us-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .why-us-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .why-us-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .why-us-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .why-us-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* ===== VEHICLES SECTION ===== */
-        .vehicles-section {
-            background: var(--white);
-            width: 100%;
-            padding: 7rem 5%;
-            display: block;
-        }
-
-        .vehicles-section > .section-header {
-            max-width: 750px;
-            margin: 0 auto 5rem;
-        }
-
-        .vehicles-grid {
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 3rem;
-            margin-top: 3rem;
-            width: 100%;
-            max-width: 100%;
-        }
+        
+        .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; visibility: visible; }
 
         @media (max-width: 768px) {
-            .vehicles-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
-        .vehicle-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border);
-            display: flex !important;
-            flex-direction: column;
-            position: relative;
-            min-height: 600px;
-            width: 100%;
-        }
-
-        .vehicle-card.featured {
-            border: 2px solid var(--accent);
-            transform: scale(1.05);
-        }
-
-        .vehicle-card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent);
-        }
-
-        .vehicle-card.featured:hover {
-            transform: scale(1.05) translateY(-12px);
-        }
-
-        .vehicle-ribbon {
-            position: absolute;
-            top: 1.5rem;
-            right: -2.5rem;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            color: var(--white);
-            padding: 0.6rem 3.5rem;
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            transform: rotate(45deg);
-            z-index: 10;
-            text-transform: uppercase;
-        }
-
-        .vehicle-image {
-            height: 280px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            font-size: 5.5rem;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .vehicle-content {
-            padding: 2.8rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .vehicle-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
-
-        .vehicle-capacity {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: rgba(0, 212, 170, 0.12);
-            color: var(--accent);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            width: fit-content;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .vehicle-description {
-            color: var(--text-light);
-            margin-bottom: 1.8rem;
-            line-height: 1.7;
-            flex-grow: 1;
-        }
-
-        .vehicle-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            font-size: 0.9rem;
-            color: var(--text);
-        }
-
-        .feature-item::before {
-            content: '✓';
-            color: var(--accent);
-            font-weight: 900;
-            font-size: 1.1rem;
-        }
-
-        .availability-badge {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.7rem;
-            padding: 1.1rem;
-            border-radius: var(--radius);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-
-        .available {
-            background: rgba(0, 212, 170, 0.15);
-            color: #047857;
-            border: 1.5px solid rgba(0, 212, 170, 0.3);
-        }
-
-        .unavailable {
-            background: rgba(239, 68, 68, 0.12);
-            color: #dc2626;
-            border: 1.5px solid rgba(239, 68, 68, 0.25);
-        }
-
-        .btn-reserve {
-            width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            border: none;
-            border-radius: var(--radius);
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.7rem;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-reserve:hover:not(:disabled) {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3);
-        }
-
-        .btn-reserve:disabled {
-            background: #e2e8f0;
-            color: #a0aec0;
-            cursor: not-allowed;
-        }
-
-        /* ===== TESTIMONIALS SECTION ===== */
-        .testimonials-section {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            color: var(--white);
-            position: relative;
-        }
-
-        .testimonials-section::before {
-            content: '"';
-            position: absolute;
-            top: -2rem;
-            left: 5%;
-            font-family: 'Playfair Display', serif;
-            font-size: 25rem;
-            color: rgba(0, 212, 170, 0.08);
-            line-height: 1;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            padding: 2.5rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            transition: var(--transition);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(0, 212, 170, 0.3);
-        }
-
-        .testimonial-stars {
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 3px;
-        }
-
-        .testimonial-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            font-style: italic;
-            font-weight: 500;
-            opacity: 0.95;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .author-avatar {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .author-info h4 {
-            font-size: 1rem;
-            margin-bottom: 0.3rem;
-            font-weight: 700;
-        }
-
-        .author-info p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-        }
-
-        /* ===== DESTINATIONS SECTION ===== */
-        .destinations-section {
-            background: var(--white);
-        }
-
-        .destinations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .destination-card {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            height: 420px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            cursor: pointer;
-            group: item;
-        }
-
-        .destination-card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .destination-image {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            transition: var(--transition);
-        }
-
-        .destination-card:hover .destination-image {
-            transform: scale(1.15);
-        }
-
-        .destination-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(15, 40, 71, 0.98) 0%, rgba(15, 40, 71, 0.5) 50%, transparent 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2.5rem;
-            color: var(--white);
-        }
-
-        .destination-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 0.7rem;
-            font-weight: 700;
-        }
-
-        .destination-content p {
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .destination-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            color: var(--accent);
-            font-weight: 700;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-        }
-
-        .destination-link:hover {
-            gap: 1.2rem;
-        }
-
-        /* ===== FOOTER ELEGANTE ===== */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            padding: 5rem 5% 2.5rem;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2.5fr 1.5fr 1.5fr 1.5fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            color: var(--white);
-        }
-
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .footer-section h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            margin-bottom: 1.8rem;
-            color: var(--white);
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section li {
-            margin-bottom: 0.9rem;
-        }
-
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.75);
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.95rem;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent);
-            transform: translateX(6px);
-        }
-
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-top: 2.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        /* ===== WHATSAPP BUTTON ===== */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 2.5rem;
-            right: 2.5rem;
-            width: 65px;
-            height: 65px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            cursor: pointer;
-            box-shadow: 0 10px 35px rgba(37, 211, 102, 0.4);
-            transition: var(--transition);
-            text-decoration: none;
-            z-index: 999;
-            animation: pulse-whatsapp 2s infinite;
-            border: none;
-        }
-
-        @keyframes pulse-whatsapp {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        .whatsapp-button:hover {
-            transform: scale(1.15) rotate(-10deg);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .nav-center {
-                gap: 2rem;
-                font-size: 0.85rem;
-            }
-
-            .search-form {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 2.5rem;
-            }
-
-            .hero-stats {
-                gap: 3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-center {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .search-form {
-                grid-template-columns: 1fr;
-            }
-
-            .btn-search {
-                grid-column: 1 / -1;
-            }
-
-            .vehicles-grid,
-            .destinations-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .vehicle-card.featured {
-                transform: scale(1);
-            }
-
-            .vehicle-card.featured:hover {
-                transform: translateY(-12px);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-
-            .search-container {
-                padding: 2rem;
-            }
-
-            section {
-                padding: 4rem 5%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-badge {
-                padding: 0.6rem 1.5rem;
-                font-size: 0.85rem;
-            }
-
-            .search-form {
-                gap: 1rem;
-            }
-
-            .hero-stats {
-                gap: 1.5rem;
-                flex-direction: column;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-        }
-
-        /* ===== ANIMACIONES SCROLL ===== */
-        .reveal {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal.active {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        /* Asegurar que los vehículos siempre sean visibles */
-        .vehicle-card.reveal {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
+            h1 { font-size: 1.8rem; }
+            .tab-btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+            .whatsapp-float { width: 60px; height: 60px; font-size: 2rem; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header id="header">
-        <nav>
-            <a href="#" class="logo">GO<span>.</span></a>
-            <ul class="nav-center">
-                <li><a href="#vehiculos" data-es="Vehículos" data-en="Vehicles">Vehículos</a></li>
-                <li><a href="#destinos" data-es="Destinos" data-en="Destinations">Destinos</a></li>
-                <li><a href="#testimonios" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
-                <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
-            </ul>
-            <div class="nav-right">
-                <div class="language-selector">
-                    <button class="lang-btn active" onclick="changeLanguage('es')" id="btn-es">ES</button>
-                    <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en">EN</button>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- Hero -->
+    <section class="hero-local">
         <div class="hero-content">
-            <div class="hero-badge" data-es="🌍 Transporte Premium en Ecuador" data-en="🌍 Premium Transport in Ecuador">
-                Transporte Premium en Ecuador
+            <div class="logo-badge">
+                <img src="logo-go-tours.png" alt="GO Tours & AVENTURA">
             </div>
-            <h1 data-es="Descubre Ecuador con <span>Confort</span> y <span>Seguridad</span>" data-en="Discover Ecuador with <span>Comfort</span> and <span>Safety</span>">
-                Descubre Ecuador con <span>Confort</span> y <span>Seguridad</span>
-            </h1>
-            <p class="hero-subtitle" data-es="Flota de vehículos premium, conductores profesionales certificados y experiencias turísticas inolvidables a través de los paisajes más espectaculares de Sudamérica" data-en="Premium vehicle fleet, certified professional drivers and unforgettable tourist experiences through South America's most spectacular landscapes">
-                Flota de vehículos premium, conductores profesionales certificados y experiencias turísticas inolvidables a través de los paisajes más espectaculares de Sudamérica
+            <div class="hero-tag">🌿 Operadores Locales Independientes</div>
+            <h1>No somos una agencia más.<br>Somos tus <span class="highlight">compañeros de viaje</span>.</h1>
+            <p class="hero-subtitle">
+                Dejamos las grandes empresas para crear algo más humano: una experiencia donde te acompañamos paso a paso, 
+                donde no estás solo ni un minuto, y donde conoces Ecuador con quienes realmente lo vivimos cada día.
             </p>
-            <div class="hero-cta">
-                <button class="btn-primary" onclick="document.getElementById('search-section').scrollIntoView({behavior: 'smooth'})">
-                    <span data-es="Reservar Ahora" data-en="Book Now">Reservar Ahora</span>
-                    <span>→</span>
-                </button>
-                <button class="btn-secondary" onclick="document.getElementById('vehiculos').scrollIntoView({behavior: 'smooth'})">
-                    <span data-es="Conocer Flota" data-en="See Fleet">Conocer Flota</span>
-                </button>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">10+</span>
-                    <span class="stat-label" data-es="Años Experiencia" data-en="Years Experience">Años Experiencia</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">5K+</span>
-                    <span class="stat-label" data-es="Clientes Felices" data-en="Happy Clients">Clientes Felices</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label" data-es="Confiabilidad" data-en="Reliability">Confiabilidad</span>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
         </div>
     </section>
 
-    <!-- SEARCH -->
-    <section class="search-section" id="search-section">
-        <div class="search-container reveal">
-            <div class="search-header">
-                <h2 data-es="Reserva tu Transporte" data-en="Book Your Transport">Reserva tu Transporte</h2>
-                <p data-es="Encuentra el vehículo perfecto para tu aventura" data-en="Find the perfect vehicle for your adventure">Encuentra el vehículo perfecto para tu aventura</p>
+    <!-- Companionship -->
+    <section class="companionship-section">
+        <div class="trust-badges">
+            <div class="trust-item">
+                <span class="trust-icon">🤝</span>
+                <h4>Te Acompañamos</h4>
             </div>
-            <form class="search-form" id="searchForm">
-                <div class="form-group">
-                    <label for="fechaInicio" data-es="Fecha Inicio" data-en="Start Date">Fecha Inicio</label>
-                    <input type="date" id="fechaInicio" required>
-                </div>
-                <div class="form-group">
-                    <label for="fechaFin" data-es="Fecha Fin" data-en="End Date">Fecha Fin</label>
-                    <input type="date" id="fechaFin" required>
-                </div>
-                <div class="form-group">
-                    <label for="capacidad" data-es="Pasajeros" data-en="Passengers">Pasajeros</label>
-                    <select id="capacidad">
-                        <option value="">Seleccionar...</option>
-                        <option value="10">10 Pasajeros</option>
-                        <option value="18">18 Pasajeros</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-search" data-es="Buscar" data-en="Search">
-                    <span data-es="Buscar" data-en="Search">Buscar</span>
-                </button>
-            </form>
+            <div class="trust-item">
+                <span class="trust-icon">💬</span>
+                <h4>Chat Directo 24/7</h4>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">🏔️</span>
+                <h4>Locales Verificados</h4>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">❤️</span>
+                <h4>Comunidad Real</h4>
+            </div>
+        </div>
+
+        <div class="diff-message">
+            <h2>La diferencia entre un tour y una aventura compartida</h2>
+            <p>
+                No te dejamos en manos de terceros. Desde que escribes tu primer mensaje hasta que te despedimos en el aeropuerto, 
+                <strong>estamos contigo</strong>. Conocemos tu nombre, tus gustos, y nos preocupamos porque cada día sea especial. 
+                No somos intermediarios: somos tu familia ecuatoriana durante tu estadía.
+            </p>
+            <div class="signature">— El equipo de GO Tours & AVENTURA</div>
         </div>
     </section>
 
-    <!-- WHY US -->
-    <section class="why-us-section">
+    <!-- Routes Section -->
+    <section class="routes-section">
         <div class="section-header">
-            <div class="section-label" data-es="POR QUÉ ELEGIR NOS" data-en="WHY CHOOSE US">POR QUÉ ELEGIR NOS</div>
-            <h2 class="section-title" data-es="Tu Confianza, Nuestra Prioridad" data-en="Your Trust, Our Priority">Tu Confianza, Nuestra Prioridad</h2>
+            <h2>Elige tu Aventura</h2>
+            <p>Diseñadas para viajeros que buscan experiencias auténticas, lejos de circuitos masivos</p>
         </div>
-        <div class="why-us-grid">
-            <div class="why-us-card reveal">
-                <span class="why-us-icon">🛡️</span>
-                <h3 data-es="Seguridad Garantizada" data-en="Guaranteed Safety">Seguridad Garantizada</h3>
-                <p data-es="Vehículos con mantenimiento riguroso, seguros vigentes y conductores con certificaciones internacionales." data-en="Vehicles with rigorous maintenance, current insurance and internationally certified drivers.">Vehículos con mantenimiento riguroso, seguros vigentes y conductores con certificaciones internacionales.</p>
+
+        <!-- Tabs -->
+        <div class="route-tabs">
+            <button class="tab-btn active" onclick="showRoute('andes-amazon')">
+                🏔️ 5 Días: Andes al Amazon
+            </button>
+            <button class="tab-btn" onclick="showRoute('quito-depth')">
+                🌄 7 Días: Quito Profundo
+            </button>
+        </div>
+
+        <!-- RUTA 1: ANDES AL AMAZON (5 DÍAS) -->
+        <div id="andes-amazon" class="route-content active">
+            <div class="route-intro">
+                <h3>De los 4.800m a la Selva Tropical</h3>
+                <p>Una travesía épica desde el glaciar de Cotopaxi hasta la selva amazónica, pasando por cascadas, comunidades indígenas y paisajes que cambian cada hora. Ideal para quienes quieren ver la diversidad de Ecuador en poco tiempo.</p>
             </div>
-            <div class="why-us-card reveal">
-                <span class="why-us-icon">⭐</span>
-                <h3 data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</h3>
-                <p data-es="Más de una década brindando servicios premium de transporte turístico en Ecuador con excelencia comprobada." data-en="Over a decade providing premium tourist transport services in Ecuador with proven excellence.">Más de una década brindando servicios premium de transporte turístico en Ecuador con excelencia comprobada.</p>
+
+            <div class="days-grid">
+                <!-- Día 1 -->
+                <div class="day-card">
+                    <div class="day-image">
+                        <!-- REEMPLAZA ESTO CON TU FOTO: -->
+                        <div class="image-placeholder">
+                            📸<br>Foto: Refugio Cotopaxi<br>(Sube: cotopaxi-refugio.jpg)
+                        </div>
+                        <!-- <img src="images/cotopaxi-refugio.jpg" alt="Refugio Cotopaxi"> -->
+                    </div>
+                    <div class="day-content">
+                        <span class="day-number">Día 1</span>
+                        <h4>El Gigante de los Andes</h4>
+                        <div class="day-location">📍 Cotopaxi Nacional Park</div>
+                        
+                        <ul class="activities-list">
+                            <li><span class="act-icon">🥾</span> Ascenso al Refugio José Rivas (4.800m) con guía especializado</li>
+                            <li><span class="act-icon">🏞️</span> Laguna Limpiopungo con vistas espectaculares al volcán</li>
+                            <li><span class="act-icon">🚴</span> Opcional: Descenso en bici por senderos de paramo</li>
+                            <li><span class="act-icon">🍃</span> Aclimatación y conexión con el páramo andino</li>
+                        </ul>
+
+                        <div class="stay-box">
+                            <strong>🏠 Noche:</strong> Lodge de montaña en Cuscungo. Ambiente acogedor, chimenea y cena familiar.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Día 2 -->
+                <div class="day-card">
+                    <div class="day-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <div class="image-placeholder">
+                            📸<br>Foto: Carretera a Baños<br>(Sube: banos-road.jpg)
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <span class="day-number">Día 2</span>
+                        <h4>El Camino de las Cascadas</h4>
+                        <div class="day-location">📍 Traslado Cotopaxi → Baños (155km)</div>
+                        
+                        <ul class="activities-list">
+                            <li><span class="act-icon">🚗</span> Viaje escénico por la Avenida de los Volcanes</li>
+                            <li><span class="act-icon">🌄</span> Cambio de paisaje: de paramo a bosque nublado tropical</li>
+                            <li><span class="act-icon">♨️</span> Llegada a Baños: pueblo de aguas termales y aventura</li>
+                            <li><span class="act-icon">🚶</span> Tarde libre para explorar el pueblo a tu ritmo</li>
+                        </ul>
+
+                        <div class="stay-box">
+                            <strong>🏠 Noche:</strong> Quinta La Aurora. Habitación privada con bañera y vista a las montañas.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Día 3 -->
+                <div class="day-card">
+                    <div class="day-image" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+                        <div class="image-placeholder">
+                            📸<br>Foto: Casa del Árbol<br>(Sube: casa-arbol-swing.jpg)
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <span class="day-number">Día 3</span>
+                        <h4>La Ruta de las Cascadas</h4>
+                        <div class="day-location">📍 Baños + Traslado a Puyo (Amazonía)</div>
+                        
+                        <ul class="activities-list">
+                            <li><span class="act-icon">🌊</span> Ruta de las Cascadas incluyendo Pailón del Diablo</li>
+                            <li><span class="act-icon">🌳</span> Casa del Árbol: el columpio del fin del mundo</li>
+                            <li><span class="act-icon">☕</span> Café de altura en mirador con vistas al Tungurahua</li>
+                            <li><span class="act-icon">🌿</span> Tarde: traslado a Puyo, puerta de entrada a la Amazonía</li>
+                        </ul>
+
+                        <div class="stay-box">
+                            <strong>🏠 Noche:</strong> Las Palmas en Puyo. Lodge preparado para la inmersión en selva.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Día 4 -->
+                <div class="day-card">
+                    <div class="day-image" style="background: linear-gradient(135deg, #134E5E, #71B280);">
+                        <div class="image-placeholder">
+                            📸<br>Foto: Comunidad Indígena<br>(Sube: indichuris.jpg)
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <span class="day-number">Día 4</span>
+                        <h4>Inmersión en la Amazonía</h4>
+                        <div class="day-location">📍 Comunidad Indichuris & Selva</div>
+                        
+                        <ul class="activities-list">
+                            <li><span class="act-icon">👥</span> Visita a comunidad Kichwa Indichuris (conexión cultural profunda)</li>
+                            <li><span class="act-icon">🛶</span> Canoa por el río Puyo con guía local</li>
+                            <li><span class="act-icon">🌺</span> Caminata a cascada Hola Vida (baño opcional)</li>
+                            <li><span class="act-icon">🌿</span> Aprendizaje de plantas medicinales y tradiciones ancestrales</li>
+                            <li><span class="act-icon">🍽️</span> Almuerzo tradicional con familia de la comunidad</li>
+                        </ul>
+
+                        <div class="stay-box">
+                            <strong>🏠 Noche:</strong> Retorno a Las Palmas. Noche de reflexión bajo los sonidos de la selva.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Día 5 -->
+                <div class="day-card">
+                    <div class="day-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <div class="image-placeholder">
+                            📸<br>Foto: Retorno a Quito<br>(Sube: quito-return.jpg)
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <span class="day-number">Día 5</span>
+                        <h4>Regreso con el Corazón Lleno</h4>
+                        <div class="day-location">📍 Puyo → Quito (300km)</div>
+                        
+                        <ul class="activities-list">
+                            <li><span class="act-icon">🌅</span> Mañana tranquila en Puyo (opcional: visita a zoológico de rescate)</li>
+                            <li><span class="act-icon">🚗</span> Traslado privado de retorno a Quito (5-6 horas escénicas)</li>
+                            <li><span class="act-icon">📸</span> Paradas estratégicas para fotos de paisajes de ensueño</li>
+                            <li><span class="act-icon">🤝</span> Drop-off en tu hotel en Quito. No es un adiós, es un hasta luego.</li>
+                        </ul>
+
+                        <div class="stay-box" style="background: var(--forest-dark); color: white;">
+                            <strong>✨ Incluye:</strong> Todas las noches en habitaciones privadas, desayunos, traslados especializados, guías locales en cada destino, y nuestra compañía constante.
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="why-us-card reveal">
-                <span class="why-us-icon">💎</span>
-                <h3 data-es="Confort Incomparable" data-en="Unmatched Comfort">Confort Incomparable</h3>
-                <p data-es="Flota moderna con tecnología de punta, clima regulado y servicios que superan expectativas." data-en="Modern fleet with cutting-edge technology, regulated climate and services that exceed expectations.">Flota moderna con tecnología de punta, clima regulado y servicios que superan expectativas.</p>
+        </div>
+
+        <!-- RUTA 2: QUITO PROFUNDO (7 DÍAS) -->
+        <div id="quito-depth" class="route-content">
+            <div class="route-intro">
+                <h3>Quito y sus Tesoros Ocultos</h3>
+                <p>Para quienes vienen de Galápagos y quieren descubrir la otra cara de Ecuador: los Andes, las comunidades indígenas vivas, y la naturaleza a 4.000 metros de altura.</p>
             </div>
-            <div class="why-us-card reveal">
-                <span class="why-us-icon">🌍</span>
-                <h3 data-es="Cobertura Completa" data-en="Complete Coverage">Cobertura Completa</h3>
-                <p data-es="Llegamos a todos los destinos: Costa, Sierra, Amazonía y Galápagos. Donde quieras ir, te llevamos." data-en="We reach all destinations: Coast, Highlands, Amazon and Galápagos. Wherever you want to go, we take you there.">Llegamos a todos los destinos: Costa, Sierra, Amazonía y Galápagos. Donde quieras ir, te llevamos.</p>
-            </div>
-            <div class="why-us-card reveal">
-                <span class="why-us-icon">💰</span>
-                <h3 data-es="Mejor Relación Precio" data-en="Best Value">Mejor Relación Precio</h3>
-                <p data-es="Precios competitivos sin sacrificar calidad. Transparencia total sin costos ocultos." data-en="Competitive prices without sacrificing quality. Total transparency with no hidden costs.">Precios competitivos sin sacrificar calidad. Transparencia total sin costos ocultos.</p>
-            </div>
-            <div class="why-us-card reveal">
-                <span class="why-us-icon">⚡</span>
-                <h3 data-es="Respuesta Inmediata" data-en="Instant Response">Respuesta Inmediata</h3>
-                <p data-es="Cotizaciones y confirmaciones en menos de 30 minutos. Disponibilidad 24/7 por WhatsApp." data-en="Quotes and confirmations in less than 30 minutes. 24/7 availability via WhatsApp.">Cotizaciones y confirmaciones en menos de 30 minutos. Disponibilidad 24/7 por WhatsApp.</p>
+
+            <div class="days-grid">
+                <!-- Resumen de los 7 días (versión compacta) -->
+                <div class="day-card">
+                    <div class="day-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <div class="image-placeholder">
+                            📸<br>Foto: Quilotoa<br>(Sube: quilotoa.jpg)
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <span class="day-number">Días 1-2</span>
+                        <h4>Quito Patrimonial + Cotopaxi</h4>
+                        <div class="day-location">📍 Quito & Cotopaxi</div>
+                        <ul class="activities-list">
+                            <li><span class="act-icon">🏛️</span> Quito Colonial completo con guía historiador</li>
+                            <li><span class="act-icon">🥾</span> Ascenso al Refugio Cotopaxi (4.800m)</li>
+                            <li><span class="act-icon">🏔️</span> Laguna Limpiopungo y paramo andino</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-image" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+                        <div class="image-placeholder">
+                            📸<br>Foto: Termas Papallacta<br>(Sube: papallacta.jpg)
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <span class="day-number">Días 3-4</span>
+                        <h4>Quilotoa & Termas</h4>
+                        <div class="day-location">📍 Laguna Quilotoa & Papallacta</div>
+                        <ul class="activities-list">
+                            <li><span class="act-icon">💎</span> Laguna Quilotoa y sus aguas turquesas misteriosas</li>
+                            <li><span class="act-icon">♨️</span> Termas naturales de Papallacta bajo las estrellas</li>
+                            <li><span class="act-icon">👥</span> Comunidades indígenas del altiplano</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <div class="image-placeholder">
+                            📸<br>Foto: Otavalo<br>(Sube: otavalo-market.jpg)
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <span class="day-number">Días 5-7</span>
+                        <h4>Mindo & Otavalo</h4>
+                        <div class="day-location">📍 Mindo & Mercado Otavalo</div>
+                        <ul class="activities-list">
+                            <li><span class="act-icon">🌿</span> Mindo: canopy, cascadas y chocolate artesanal</li>
+                            <li><span class="act-icon">🎨</span> Mercado indígena de Otavalo (textiles y artesanías)</li>
+                            <li><span class="act-icon">🍽️</span> Gastronomía ancestral y despedida</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- VEHÍCULOS -->
-    <section class="vehicles-section" id="vehiculos">
-        <div class="section-header">
-            <div class="section-label" data-es="NUESTRA FLOTA" data-en="OUR FLEET">NUESTRA FLOTA</div>
-            <h2 class="section-title" data-es="Vehículos de Última Generación" data-en="State-of-the-Art Vehicles">Vehículos de Última Generación</h2>
-            <p class="section-subtitle" data-es="Tecnología de punta, confort máximo y diseño ergonómico para viajes memorables" data-en="Cutting-edge technology, maximum comfort and ergonomic design for memorable trips">Tecnología de punta, confort máximo y diseño ergonómico para viajes memorables</p>
-        </div>
-        <div class="vehicles-grid" id="vehiclesContainer"></div>
-    </section>
+    <!-- INSTRUCCIONES PARA IMÁGENES -->
+    <section class="gallery-instructions">
+        <h2>📸 ¿Cómo Subir Imágenes Bonitas?</h2>
+        
+        <div class="instructions-grid">
+            <div class="instruction-card">
+                <h3>1. Dónde Buscar Fotos (Gratis)</h3>
+                <ol>
+                    <li>Ve a <strong>Unsplash.com</strong> o <strong>Pexels.com</strong></li>
+                    <li>Busca: "Cotopaxi Ecuador", "Baños Ecuador", "Amazon Ecuador", "Quilotoa", "Indigenous community Ecuador"</li>
+                    <li>Descarga las que te gusten (son libres de derechos)</li>
+                    <li>Renómbralas: <code>cotopaxi-refugio.jpg</code>, <code>casa-arbol.jpg</code>, etc.</li>
+                </ol>
+            </div>
 
-    <!-- TESTIMONIOS -->
-    <section class="testimonials-section" id="testimonios">
-        <div class="section-header">
-            <div class="section-label" data-es="TESTIMONIOS" data-en="TESTIMONIALS">TESTIMONIOS</div>
-            <h2 class="section-title" data-es="Lo Que Dicen Nuestros Clientes" data-en="What Our Clients Say">Lo Que Dicen Nuestros Clientes</h2>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card reveal">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text" data-es="Experiencia excepcional en cada detalle. Desde la puntualidad hasta el profesionalismo del conductor, todo fue perfecto. Ecuador se ve mejor desde un vehículo de GO." data-en="Exceptional experience in every detail. From punctuality to the driver's professionalism, everything was perfect. Ecuador looks better from a GO vehicle.">Experiencia excepcional en cada detalle. Desde la puntualidad hasta el profesionalismo del conductor, todo fue perfecto.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MR</div>
-                    <div class="author-info">
-                        <h4>María Rodríguez</h4>
-                        <p data-es="Bogotá, Colombia" data-en="Bogotá, Colombia">Bogotá, Colombia</p>
-                    </div>
+            <div class="instruction-card">
+                <h3>2. Cómo Subirlas a tu GitHub</h3>
+                <ol>
+                    <li>En tu repositorio, crea carpeta <strong>images/</strong> (o assets/)</li>
+                    <li>Sube las fotos allí (botón "Add file" → Upload files)</li>
+                    <li>Espera que termine de subir y haz commit</li>
+                </ol>
+                <div class="code-block">
+&lt;img src="images/cotopaxi-refugio.jpg"&gt;
                 </div>
             </div>
-            <div class="testimonial-card reveal">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text" data-es="Tour corporativo de 18 personas organizado impecablemente. Vehículo excelente, conductor atentísimo y servicios que superaron nuestras expectativas. Volveremos con certeza." data-en="Corporate tour of 18 people impeccably organized. Excellent vehicle, very attentive driver and services that exceeded our expectations.">Tour corporativo de 18 personas organizado impecablemente. Vehículo excelente, conductor atentísimo.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">JG</div>
-                    <div class="author-info">
-                        <h4>Juan García</h4>
-                        <p data-es="Agencia Viajes Plus" data-en="Viajes Plus Agency">Agencia Viajes Plus</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card reveal">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text" data-es="La mejor relación calidad-precio que he encontrado en transporte turístico. Recorrimos Costa, Sierra y Amazonía con máximo confort. Definitivamente GO es la opción correcta." data-en="The best value for money I've found in tourist transportation. We traveled the Coast, Highlands and Amazon with maximum comfort.">La mejor relación calidad-precio que he encontrado. Recorrimos Coast, Sierra y Amazonía.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">CP</div>
-                    <div class="author-info">
-                        <h4>Carlos Pérez</h4>
-                        <p data-es="Travel Blogger" data-en="Travel Blogger">Travel Blogger</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- DESTINOS -->
-    <section class="destinations-section" id="destinos">
-        <div class="section-header">
-            <div class="section-label" data-es="DESTINOS" data-en="DESTINATIONS">DESTINOS</div>
-            <h2 class="section-title" data-es="Explora las Maravillas de Ecuador" data-en="Explore Ecuador's Wonders">Explora las Maravillas de Ecuador</h2>
-            <p class="section-subtitle" data-es="Desde volcanes nevados hasta playas paradisíacas, nosotros te llevamos a los lugares más increíbles" data-en="From snowy volcanoes to paradisiacal beaches, we take you to the most incredible places">Desde volcanes nevados hasta playas paradisíacas, nosotros te llevamos a los lugares más increíbles</p>
-        </div>
-        <div class="destinations-grid">
-            <div class="destination-card reveal">
-                <div class="destination-image">🏔️</div>
-                <div class="destination-overlay">
-                    <div class="destination-content">
-                        <h3 data-es="Cotopaxi" data-en="Cotopaxi">Cotopaxi</h3>
-                        <p data-es="El volcán activo más alto del mundo. Aventura pura en los Andes ecuatorianos." data-en="The world's highest active volcano. Pure adventure in the Ecuadorian Andes.">El volcán activo más alto del mundo. Aventura pura en los Andes.</p>
-                        <a href="https://wa.me/593983526755" class="destination-link" data-es="Explorar →" data-en="Explore →">Explorar →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="destination-card reveal">
-                <div class="destination-image">🌴</div>
-                <div class="destination-overlay">
-                    <div class="destination-content">
-                        <h3 data-es="Amazonía" data-en="Amazon">Amazonía</h3>
-                        <p data-es="Biodiversidad incomparable. Naturaleza salvaje en su máxima expresión." data-en="Unparalleled biodiversity. Wild nature in its fullest expression.">Biodiversidad incomparable. Naturaleza salvaje en su máxima expresión.</p>
-                        <a href="https://wa.me/593983526755" class="destination-link" data-es="Explorar →" data-en="Explore →">Explorar →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="destination-card reveal">
-                <div class="destination-image">🏖️</div>
-                <div class="destination-overlay">
-                    <div class="destination-content">
-                        <h3 data-es="Costa del Pacífico" data-en="Pacific Coast">Costa del Pacífico</h3>
-                        <p data-es="Playas de ensueño y gastronomía exquisita. Relajación y diversión garantizadas." data-en="Dream beaches and exquisite cuisine. Relaxation and fun guaranteed.">Playas de ensueño y gastronomía exquisita. Relajación garantizada.</p>
-                        <a href="https://wa.me/593983526755" class="destination-link" data-es="Explorar →" data-en="Explore →">Explorar →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="destination-card reveal">
-                <div class="destination-image">🏝️</div>
-                <div class="destination-overlay">
-                    <div class="destination-content">
-                        <h3 data-es="Galápagos" data-en="Galápagos">Galápagos</h3>
-                        <p data-es="Un laboratorio vivo de evolución. Fauna única en el mundo." data-en="A living evolution laboratory. Unique fauna in the world.">Un laboratorio vivo de evolución. Fauna única en el mundo.</p>
-                        <a href="https://wa.me/593983526755" class="destination-link" data-es="Explorar →" data-en="Explore →">Explorar →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="destination-card reveal">
-                <div class="destination-image">💧</div>
-                <div class="destination-overlay">
-                    <div class="destination-content">
-                        <h3 data-es="Baños" data-en="Baños">Baños</h3>
-                        <p data-es="Aventura extrema y aguas termales. La puerta a la Amazonía." data-en="Extreme adventure and hot springs. The gateway to the Amazon.">Aventura extrema y aguas termales. Puerta a la Amazonía.</p>
-                        <a href="https://wa.me/593983526755" class="destination-link" data-es="Explorar →" data-en="Explore →">Explorar →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="destination-card reveal">
-                <div class="destination-image">🏛️</div>
-                <div class="destination-overlay">
-                    <div class="destination-content">
-                        <h3 data-es="Quito" data-en="Quito">Quito</h3>
-                        <p data-es="Capital más alta del mundo y Patrimonio UNESCO. Arquitectura colonial vibrante." data-en="World's highest capital and UNESCO Heritage. Vibrant colonial architecture.">Capital más alta del mundo. Patrimonio UNESCO vibrante.</p>
-                        <a href="https://wa.me/593983526755" class="destination-link" data-es="Explorar →" data-en="Explore →">Explorar →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer id="contacto">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="#" class="logo">GO<span>.</span></a>
-                <p data-es="Tu agencia de transporte turístico premium en Ecuador. Combinamos profesionalismo, comodidad y seguridad para crear experiencias de viaje inolvidables en los paisajes más hermosos de Sudamérica." data-en="Your premium tourist transport agency in Ecuador. We combine professionalism, comfort and safety to create unforgettable travel experiences in South America's most beautiful landscapes.">Tu agencia de transporte turístico premium en Ecuador.</p>
-                <div class="social-links">
-                    <a href="#" title="Facebook">f</a>
-                    <a href="#" title="Instagram">📷</a>
-                    <a href="https://wa.me/593983526755" title="WhatsApp">💬</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4 data-es="Servicios" data-en="Services">Servicios</h4>
-                <ul>
-                    <li><a href="#" data-es="Transporte Turístico" data-en="Tourist Transport">Transporte Turístico</a></li>
-                    <li><a href="#" data-es="Tours Privados" data-en="Private Tours">Tours Privados</a></li>
-                    <li><a href="#" data-es="Traslados Aeropuerto" data-en="Airport Transfers">Traslados Aeropuerto</a></li>
-                    <li><a href="#" data-es="Viajes Corporativos" data-en="Corporate Travel">Viajes Corporativos</a></li>
+            <div class="instruction-card">
+                <h3>3. Fotos que Necesitas (Mínimo)</h3>
+                <ul style="list-style: none; line-height: 2;">
+                    <li>✅ Una de Cotopaxi (refugio o laguna)</li>
+                    <li>✅ Una de Baños/cascadas</li>
+                    <li>✅ Una de Amazonía/selva</li>
+                    <li>✅ Una de comunidad indígena</li>
+                    <li>✅ Una tuya (para sección guía)</li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h4 data-es="Compañía" data-en="Company">Compañía</h4>
-                <ul>
-                    <li><a href="#" data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</a></li>
-                    <li><a href="#" data-es="Flota" data-en="Fleet">Flota</a></li>
-                    <li><a href="#" data-es="Blog" data-en="Blog">Blog</a></li>
-                    <li><a href="#" data-es="Empleo" data-en="Careers">Empleo</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
-                <ul>
-                    <li><a href="https://wa.me/593983526755">📱 +593 98 352 6755</a></li>
-                    <li><a href="mailto:info@gotourecuador.com">✉️ info@gotourecuador.com</a></li>
-                    <li><a href="#">🗺️ Latacunga, Ecuador</a></li>
-                </ul>
+
+            <div class="instruction-card">
+                <h3>4. Truco Pro</h3>
+                <p>Si no tienes fotos aún, puedes usar URLs directas de Unsplash:</p>
+                <div class="code-block">
+&lt;img src="https://images.unsplash.com/photo-xxx"&gt;
+                </div>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Así funciona inmediatamente sin subir nada.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 GO Tours & Transport. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
-            <div>
-                <a href="#" data-es="Privacidad" data-en="Privacy">Privacidad</a> |
-                <a href="#" data-es="Términos" data-en="Terms">Términos</a>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="guide-section">
+        <div class="guide-container">
+            <div class="guide-avatar-wrap">
+                <div class="guide-avatar">🧭</div>
+                <div class="status-badge"></div>
+            </div>
+            
+            <h2>[Tu Nombre]</h2>
+            <div class="guide-role">Fundador & Guía Principal</div>
+            
+            <div class="guide-quote">
+                "Después de años llevando viajeros por estos caminos, creé GO Tours & AVENTURA para algo más honesto. 
+                Aquí no te pasamos a un subcontratista desconocido. Estoy contigo en cada paso, compartiendo historias 
+                que solo los locales conocemos."
+            </div>
+
+            <div style="color: var(--jungle); font-weight: 600; margin-bottom: 1rem;">
+                📱 Respondemos en menos de 30 minutos
+            </div>
+
+            <div class="contact-methods">
+                <a href="https://wa.me/TUNUMERO?text=Hola!%20Me%20interesa%20uno%20de%20los%20tours%20¿Podemos%20hablar?" class="contact-btn whatsapp">
+                    💬 Escríbenos por WhatsApp
+                </a>
+                <a href="tel:TUNUMERO" class="contact-btn call">
+                    📞 Llámanos ahora
+                </a>
             </div>
         </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-local">
+        <p>Operadores locales independientes · Certificados Ministerio de Turismo</p>
+        <p>Quito - Ecuador · Desde 2016 acompañando viajeros como Tino</p>
+        <div class="brand">GO Tours & AVENTURA ®</div>
     </footer>
 
-    <!-- WHATSAPP BUTTON -->
-    <a href="https://wa.me/593983526755?text=Hola!%20Me%20interesa%20información%20sobre%20tours%20en%20Ecuador" class="whatsapp-button" title="Contactar por WhatsApp">💬</a>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/TUNUMERO?text=Hola!%20Vi%20las%20rutas%20y%20quiero%20saber%20más" class="whatsapp-float">
+        <span class="whatsapp-tooltip">
+            💬 ¿Dudas? Escríbenos<br>
+            <small>Respondemos en minutos</small>
+        </span>
+        💬
+    </a>
 
     <script>
-        const vehicles = [
-            {
-                id: 1,
-                nameEs: "Minibus Premium 10 Pasajeros",
-                nameEn: "Premium Minibus 10 Passengers",
-                capacity: 10,
-                icon: "🚐",
-                descriptionEs: "Perfecto para grupos pequeños que buscan privacidad y confort. Ideal para familias y equipos corporativos.",
-                descriptionEn: "Perfect for small groups seeking privacy and comfort. Ideal for families and corporate teams.",
-                featuresEs: ["WiFi Ultra", "A/C Dual Zone", "Asientos Premium", "Conductor Certificado"],
-                featuresEn: ["Ultra WiFi", "Dual Zone A/C", "Premium Seats", "Certified Driver"]
-            },
-            {
-                id: 2,
-                nameEs: "Autocar Ejecutivo 18 Pasajeros",
-                nameEn: "Executive Coach 18 Passengers",
-                capacity: 18,
-                icon: "🚌",
-                descriptionEs: "Máxima capacidad con lujo incomparable. Ideal para grupos grandes y tours completos.",
-                descriptionEn: "Maximum capacity with unmatched luxury. Ideal for large groups and complete tours.",
-                featuresEs: ["Baño a Bordo", "WiFi Premium", "Pantallas LCD", "Aire Acondicionado Industrial"],
-                featuresEn: ["On-board Bathroom", "Premium WiFi", "LCD Screens", "Industrial Air Conditioning"],
-                featured: true
-            }
-        ];
-
-        const availability = {
-            1: {"2025-03-10": true, "2025-03-11": false, "2025-03-12": true, "2025-03-13": true},
-            2: {"2025-03-10": false, "2025-03-11": true, "2025-03-12": true, "2025-03-13": true}
-        };
-
-        let currentLanguage = 'es';
-
-        function changeLanguage(lang) {
-            currentLanguage = lang;
-            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
-            document.querySelectorAll('[data-es][data-en]').forEach(el => {
-                const text = lang === 'es' ? el.getAttribute('data-es') : el.getAttribute('data-en');
-                if (el.tagName === 'INPUT' || el.tagName === 'OPTION') {
-                    el.placeholder = text;
-                } else {
-                    el.innerHTML = text;
-                }
+        function showRoute(routeId) {
+            // Hide all contents
+            document.querySelectorAll('.route-content').forEach(el => {
+                el.classList.remove('active');
             });
-
-            renderVehicles();
-            document.documentElement.lang = lang;
-        }
-
-        function checkAvailability(vehicleId, startDate, endDate) {
-            if (!startDate || !endDate) return true;
-            const start = new Date(startDate);
-            const end = new Date(endDate);
-
-            for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-                const dateStr = d.toISOString().split('T')[0];
-                if (availability[vehicleId] && availability[vehicleId][dateStr] === false) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        function renderVehicles(startDate = null, endDate = null, capacity = null) {
-            const container = document.getElementById('vehiclesContainer');
-            container.innerHTML = '';
-
-            vehicles.forEach(vehicle => {
-                if (capacity && capacity !== '' && vehicle.capacity !== parseInt(capacity)) return;
-
-                const isAvailable = checkAvailability(vehicle.id, startDate, endDate);
-                const name = currentLanguage === 'es' ? vehicle.nameEs : vehicle.nameEn;
-                const desc = currentLanguage === 'es' ? vehicle.descriptionEs : vehicle.descriptionEn;
-                const features = currentLanguage === 'es' ? vehicle.featuresEs : vehicle.featuresEn;
-
-                const card = document.createElement('div');
-                card.className = `vehicle-card reveal ${vehicle.featured ? 'featured' : ''}`;
-
-                card.innerHTML = `
-                    ${vehicle.featured ? '<div class="vehicle-ribbon" data-es="POPULAR" data-en="POPULAR">POPULAR</div>' : ''}
-                    <div class="vehicle-image">${vehicle.icon}</div>
-                    <div class="vehicle-content">
-                        <h3 class="vehicle-title">${name}</h3>
-                        <span class="vehicle-capacity">👥 ${vehicle.capacity} ${currentLanguage === 'es' ? 'pasajeros' : 'passengers'}</span>
-                        <p class="vehicle-description">${desc}</p>
-                        <div class="vehicle-features">
-                            ${features.map(f => `<div class="feature-item">${f}</div>`).join('')}
-                        </div>
-                        <div class="availability-badge ${isAvailable ? 'available' : 'unavailable'}">
-                            <span>${isAvailable ? '✓' : '✗'}</span>
-                            ${isAvailable ? (currentLanguage === 'es' ? 'Disponible' : 'Available') : (currentLanguage === 'es' ? 'No Disponible' : 'Not Available')}
-                        </div>
-                        <button class="btn-reserve" ${!isAvailable ? 'disabled' : ''} onclick="reserveVehicle(${vehicle.id}, '${name}')">
-                            ${isAvailable ? (currentLanguage === 'es' ? 'Reservar Ahora' : 'Book Now') : (currentLanguage === 'es' ? 'Ver Alternativa' : 'See Alternative')}
-                        </button>
-                    </div>
-                `;
-
-                container.appendChild(card);
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active');
             });
+            
+            // Show selected
+            document.getElementById(routeId).classList.add('active');
+            event.target.classList.add('active');
         }
-
-        function reserveVehicle(vehicleId, vehicleName) {
-            const startDate = document.getElementById('fechaInicio').value;
-            const endDate = document.getElementById('fechaFin').value;
-            const msg = currentLanguage === 'es'
-                ? `Hola! Quiero reservar ${vehicleName}${startDate ? ` desde ${startDate}` : ''}${endDate ? ` hasta ${endDate}` : ''}`
-                : `Hi! I want to book ${vehicleName}${startDate ? ` from ${startDate}` : ''}${endDate ? ` to ${endDate}` : ''}`;
-
-            window.open(`https://wa.me/593983526755?text=${encodeURIComponent(msg)}`, '_blank');
-        }
-
-        document.getElementById('searchForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const startDate = document.getElementById('fechaInicio').value;
-            const endDate = document.getElementById('fechaFin').value;
-            const capacity = document.getElementById('capacidad').value;
-
-            renderVehicles(startDate, endDate, capacity);
-            document.getElementById('vehiculos').scrollIntoView({behavior: 'smooth'});
-        });
-
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('fechaInicio').min = today;
-        document.getElementById('fechaFin').min = today;
-
-        document.getElementById('fechaInicio').addEventListener('change', function() {
-            document.getElementById('fechaFin').min = this.value;
-        });
-
-        renderVehicles();
-
-        setTimeout(() => {
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        }, 100);
     </script>
+
 </body>
 </html>
